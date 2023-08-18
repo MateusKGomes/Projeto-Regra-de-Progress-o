@@ -24,13 +24,33 @@ public class App {
       atividades[i - 1] = scanner.nextLine();
       System.out.println("Digite o peso da atividade " + i + ":");
       pesos[i - 1] = Integer.parseInt(scanner.nextLine());
-      System.out.println("Digite a nota obtida para " + atividades[i - 1]);
+      System.out.println("Digite a nota obtida para " + atividades[i - 1] + ":");
       notas[i - 1] = Integer.parseInt(scanner.nextLine());
     }
-    System.out.println(
-        "pesos:" + Arrays.toString(pesos) + "atividades:" + Arrays.toString(atividades)
-            + Arrays.toString((notas))
-    );
     scanner.close();
   }
+
+  public static int calculaNota(int[] notas, int[] pesos) {
+    int notaFinal;
+    int nota = 0;
+    int peso = 0;
+    for (int i = 0; i < notas.length; i++) {
+      nota += notas[i] * pesos[i];
+      peso += pesos[i];
+    }
+    notaFinal = nota / peso;
+    return notaFinal;
+  }
+
+  public static String resutlado(int notaFinal) {
+    if (notaFinal < 85) {
+      return " Lamentamos informar que, com base na sua pontuação alcançada"
+          + "neste período, " + notaFinal + "%, você não atingiu a"
+          + "pontuação mínima necessária para sua aprovação.";
+    } else {
+      return "Parabéns! Você alcançou " + notaFinal +
+          "%! E temos o prazer de informar que você obteve aprovação! ";
+    }
+  }
+
 }
