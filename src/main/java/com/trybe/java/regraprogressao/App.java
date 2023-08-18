@@ -28,8 +28,8 @@ public class App {
       notas[i - 1] = Integer.parseInt(scanner.nextLine());
     }
     System.out.println(
-        "pesos:" + Arrays.toString(pesos) + "atividades:" + Arrays.toString(atividades) +
-            Arrays.toString((notas))
+        "pesos:" + Arrays.toString(pesos) + "atividades:" + Arrays.toString(atividades)
+            + Arrays.toString((notas))
     );
     scanner.close();
   }
