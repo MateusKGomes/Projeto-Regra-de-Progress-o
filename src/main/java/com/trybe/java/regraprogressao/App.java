@@ -18,14 +18,19 @@ public class App {
     int qntAtividade = Integer.parseInt((scanner.nextLine()));
     int[] pesos = new int[qntAtividade];
     String[] atividades = new String[qntAtividade];
+    int[] notas = new int[qntAtividade];
     for (int i = 1; i <= qntAtividade; i++) {
       System.out.println("Digite o nome da atividade " + i + ":");
       atividades[i - 1] = scanner.nextLine();
       System.out.println("Digite o peso da atividade " + i + ":");
       pesos[i - 1] = Integer.parseInt(scanner.nextLine());
+      System.out.println("Digite a nota obtida para " + atividades[i - 1]);
+      notas[i - 1] = Integer.parseInt(scanner.nextLine());
     }
     System.out.println(
-        "pesos:" + Arrays.toString(pesos) + "atividades:" + Arrays.toString(atividades));
+        "pesos:" + Arrays.toString(pesos) + "atividades:" + Arrays.toString(atividades) +
+            Arrays.toString((notas))
+    );
     scanner.close();
   }
 }
